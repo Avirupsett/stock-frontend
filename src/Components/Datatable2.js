@@ -4,7 +4,9 @@ import { ThemeProvider } from "@mui/material/styles";
 import { createTheme } from "@mui/material/styles";
 import { CacheProvider } from "@emotion/react";
 import createCache from "@emotion/cache";
-import { Button } from "@mui/material";
+// import { Button } from "@mui/material";
+import loading from '../assets/loading.gif';
+import reflogo from '../assets/refresh.png';
 
 const muiCache = createCache({
     key: "mui-datatables",
@@ -20,9 +22,13 @@ export default function Datatable() {
         let value1 = []
         let value2 = []
         //let value3 = []
-        let url1 = "http://localhost:1337/stock-entries"
-        let url2 = "http://localhost:1337/stock-issues"
-        //let url3 = "http://localhost:1337/products"
+         // let url1 = "http://localhost:1337/stock-entries"
+        // let url2 = "http://localhost:1337/stock-issues"
+        // let url3 = "http://localhost:1337/products"
+        let url1 = "https://inventorybackend123.herokuapp.com/stock-entries"
+        let url2 = "https://inventorybackend123.herokuapp.com/stock-issues"
+        // let url3 = "https://inventorybackend123.herokuapp.com/products"
+
 
         try{
         axios.get(url1).then(async (response) => {
@@ -108,9 +114,12 @@ export default function Datatable() {
         let value1 = []
         let value2 = []
        // let value3 = []
-        let url1 = "http://localhost:1337/stock-entries"
-        let url2 = "http://localhost:1337/stock-issues"
-        //let url3 = "http://localhost:1337/products"
+         // let url1 = "http://localhost:1337/stock-entries"
+        // let url2 = "http://localhost:1337/stock-issues"
+        // let url3 = "http://localhost:1337/products"
+        let url1 = "https://inventorybackend123.herokuapp.com/stock-entries"
+        let url2 = "https://inventorybackend123.herokuapp.com/stock-issues"
+        // let url3 = "https://inventorybackend123.herokuapp.com/products"
 
         try{
         axios.get(url1).then(async (response) => {
@@ -155,31 +164,31 @@ export default function Datatable() {
     const columns = [{name: "DATE" , options: { 
      
     setCellProps: () => ({ style: { minWidth: "100px", maxWidth: "800px",textAlign:'center',fontSize:18,backgroundColor:'#8b50ce',letterSpacing:'1.5px',color:'#fff',fontFamily:'Montserrat',fontWeight:500 }}),
-    setCellHeaderProps: () => ({ style: { textAlign:'center',fontSize:19,fontWeight:600,letterSpacing:'2px',borderRight:'2px solid',height:'65px',borderColor:'#594e8e',backgroundColor:'#3A3260',color:'#fff',fontFamily:'Montserrat'}}),
+    setCellHeaderProps: () => ({ style: { textAlign:'center',fontSize:19,fontWeight:600,letterSpacing:'2px',borderRight:`2px solid #594e8e`,borderLeft:`2px solid #594e8e`,borderBottom:`2px solid #3A3260`,height:'65px',backgroundColor:'#3A3260',color:'#fff',fontFamily:'Montserrat'}}),
     sort:false  } }, 
         {name: "PERSON NAME",options: { filterOptions: { fullWidth: true },
      
         setCellProps: () => ({ style: { minWidth: "100px", maxWidth: "800px",textAlign:'left',fontSize:18,backgroundColor:'#a353ff',letterSpacing:'1.5px',color:'#fff',fontFamily:'Montserrat',fontWeight:500 }}),
-        setCellHeaderProps: () => ({ style: { textAlign:'center',fontSize:19,fontWeight:600,letterSpacing:'2px',borderRight:'2px solid',height:'65px',borderColor:'#594e8e',backgroundColor:'#3A3260',color:'#fff',fontFamily:'Montserrat'}}),
+        setCellHeaderProps: () => ({ style: { textAlign:'center',fontSize:19,fontWeight:600,letterSpacing:'2px',borderRight:`2px solid #594e8e`,borderLeft:`2px solid #594e8e`,borderBottom:`2px solid #3A3260`,height:'65px',backgroundColor:'#3A3260',color:'#fff',fontFamily:'Montserrat'}}),
         sort:false  }},
         { name: "PRODUCT NAME", options: { filterOptions: { fullWidth: true },
      
         setCellProps: () => ({ style: { minWidth: "100px", maxWidth: "800px",textAlign:'left',fontSize:18,backgroundColor:'#dc5bbc',letterSpacing:'1.5px',color:'#fff',fontFamily:'Montserrat',fontWeight:500 }}),
-        setCellHeaderProps: () => ({ style: { textAlign:'center',fontSize:19,fontWeight:600,letterSpacing:'2px',borderRight:'2px solid',height:'65px',borderColor:'#594e8e',backgroundColor:'#3A3260',color:'#fff',fontFamily:'Montserrat'}}),
+        setCellHeaderProps: () => ({ style: { textAlign:'center',fontSize:19,fontWeight:600,letterSpacing:'2px',borderRight:`2px solid #594e8e`,borderLeft:`2px solid #594e8e`,borderBottom:`2px solid #3A3260`,height:'65px',backgroundColor:'#3A3260',color:'#fff',fontFamily:'Montserrat'}}),
         sort:false   } },
       
         { name:"ISSUE QUANTITY", options: {
         setCellProps: () => ({ style: { minWidth: "100px", maxWidth: "800px",textAlign:'center',fontSize:18,backgroundColor:'#d94b95',letterSpacing:'2px',color:'#fff',fontFamily:'Montserrat',fontWeight:500 }}),
-        setCellHeaderProps: () => ({ style: { textAlign:'center',fontSize:19,fontWeight:600,letterSpacing:'2px',borderRight:'2px solid',height:'65px',borderColor:'#594e8e',backgroundColor:'#3A3260',color:'#fff',fontFamily:'Montserrat'}}),
+        setCellHeaderProps: () => ({ style: { textAlign:'center',fontSize:19,fontWeight:600,letterSpacing:'2px',borderRight:`2px solid #594e8e`,borderLeft:`2px solid #594e8e`,borderBottom:`2px solid #3A3260`,height:'65px',backgroundColor:'#3A3260',color:'#fff',fontFamily:'Montserrat'}}),
         sort:false   } },
         { name:"ENTRY QUANTITY", options: {
         setCellProps: () => ({ style: { minWidth: "100px", maxWidth: "800px",textAlign:'center',fontSize:18,backgroundColor:'#d96176',letterSpacing:'2px',color:'#fff',fontFamily:'Montserrat',fontWeight:500 }}),
-        setCellHeaderProps: () => ({ style: { textAlign:'center',fontSize:19,fontWeight:600,letterSpacing:'2px',borderRight:'2px solid',height:'65px',borderColor:'#594e8e',backgroundColor:'#3A3260',color:'#fff',fontFamily:'Montserrat'}}),
+        setCellHeaderProps: () => ({ style: { textAlign:'center',fontSize:19,fontWeight:600,letterSpacing:'2px',borderRight:`2px solid #594e8e`,borderLeft:`2px solid #594e8e`,borderBottom:`2px solid #3A3260`,height:'65px',backgroundColor:'#3A3260',color:'#fff',fontFamily:'Montserrat'}}),
         sort:false   } },
         { name:"BALANCE",options: { 
      
         setCellProps: () => ({ style: { minWidth: "100px", maxWidth: "800px",textAlign:'center',fontSize:18,backgroundColor:'#d94461',letterSpacing:'1.5px',color:'#fff',fontFamily:'Montserrat',fontWeight:500 }}),
-        setCellHeaderProps: () => ({ style: { textAlign:'center',fontSize:19,fontWeight:600,letterSpacing:'2px',borderColor:'#594e8e',height:'65px',backgroundColor:'#3A3260',color:'#fff',fontFamily:'Montserrat'}}),
+        setCellHeaderProps: () => ({ style: { textAlign:'center',fontSize:19,fontWeight:600,letterSpacing:'2px',borderRight:`2px solid #594e8e`,borderLeft:`2px solid #594e8e`,borderBottom:`2px solid #3A3260`,height:'65px',backgroundColor:'#3A3260',color:'#fff',fontFamily:'Montserrat'}}),
         sort:false   } }
         
     ];
@@ -187,7 +196,8 @@ export default function Datatable() {
     const options = {
         customToolbar: () => {
             return (
-              <Button style={{border:'1px solid'}} onClick={async()=>await fetchData()}>Refresh</Button>
+                <img src={reflogo} alt="Refresh" style={{ width: "20px", height: "20px",marginLeft:'5px',cursor:'pointer',marginBottom:'1px' }} />
+             // <Button style={{border:'1px solid #3A3260',marginBottom:'5px',color:'#3A3260',fontWeight:550}} onClick={async()=>await fetchData()}>Refresh</Button>
             );
           },
         search: searchBtn,
@@ -213,13 +223,17 @@ export default function Datatable() {
             <ThemeProvider theme={createTheme()}>
 
                 <MUIDataTable
-                    title={"STOCK DETAILS"}
+                    title={""}
                     data={values}
                     columns={columns}
                     options={options}
                 />
             </ThemeProvider>
         </CacheProvider>
+        {values.length===0 &&
+        <div className="container" style={{display:'flex',alignItems:'center',justifyContent:'center',marginTop:'5px'}}>
+        <img src={loading} alt="loading.."/>
+        </div>}
         </div>
     );
 }
